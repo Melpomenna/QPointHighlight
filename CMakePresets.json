@@ -1,0 +1,82 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0
+    },
+    "configurePresets": [
+    {
+        "name": "base",
+        "cacheVariables": {
+            "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+            "CMAKE_CXX_STANDARD": "17",
+            "CMAKE_CXX_STANDARD_REQUIRED": "YES"
+        }
+    },
+      {
+        "inherits": "base",
+        "name": "base-Windows",
+        "hidden": true,
+        "generator": "Visual Studio 17 2022"
+      },
+      {
+        "inherits": "base",
+        "name": "base-Linux",
+        "hidden": true,
+        "generator": "Ninja"
+      },
+      {
+        "name": "release-Windows",
+        "inherits": "base-Windows",
+        "binaryDir": "${sourceDir}/build/release",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Release"
+        }
+      },
+      {
+        "name": "debug-Windows",
+        "inherits": "base-Windows",
+        "binaryDir": "${sourceDir}/build/debug",
+        "cacheVariables": {
+          "CMAKE_BUILD_TYPE": "Debug"
+        }
+      }
+    ],
+    "buildPresets": [
+      {
+        "name": "release-Windows",
+        "configurePreset": "release-Windows",
+        "jobs": 1
+      },
+      {
+        "name": "debug-Windows",
+        "configurePreset": "debug-Windows",
+        "jobs": 1
+      }
+    ],
+    "testPresets": [
+      {
+        "name": "release-Windows",
+        "configurePreset": "release-Windows",
+        "output": {
+          "outputOnFailure": true
+        },
+        "execution": {
+          "noTestsAction": "error",
+          "stopOnFailure": true
+        }
+      },
+      {
+        "name": "debug-Windows",
+        "configurePreset": "debug-Windows",
+        "output": {
+          "outputOnFailure": true
+        },
+        "execution": {
+          "noTestsAction": "error",
+          "stopOnFailure": true
+        }
+      }
+    ]
+  }

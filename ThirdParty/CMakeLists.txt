@@ -1,0 +1,2 @@
+add_subdirectory(GTest)
+add_subdirectory(Benchmarks)
