@@ -93,10 +93,10 @@ ctest --preset=debug-Linux
 
 Debug:
 ```bash
-./build/debug/build/Debug/Benchmark.exe
+./build/debug/build/Debug/Benchmarks.exe
 ```
 
 Release:
 ```bash
-./build/release/build/Release/Benchmark.exe
+./build/release/build/Release/Benchmarks.exe
 ```
