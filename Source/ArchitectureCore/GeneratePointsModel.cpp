@@ -47,7 +47,7 @@ namespace Core::ArchitectureCore
         }
     }
 
-    _NODISCARD const std::pmr::vector<Data::Circle2D> GeneratePointsModel::GetData() const& noexcept
+    _NODISCARD const std::pmr::vector<Data::Circle2D>& GeneratePointsModel::GetData() const noexcept
     {
         return circles_;
     }

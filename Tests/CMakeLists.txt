@@ -4,9 +4,7 @@ add_executable(${target}
      main.tests.cpp   
 )
 
-target_include_directories(${target} PRIVATE ${CMAKE_SOURCE_DIR}/Include)
-
-target_link_libraries(${target} PRIVATE GTest::gtest_main ArchitectureCore Async)
+target_link_libraries(${target} PRIVATE Qt6::Core Qt6::Gui GTest::gtest_main GTest::gmock ArchitectureCore Async)
 
 include(CompilerOptions)
 SetCompilerOptions(${target})
