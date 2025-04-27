@@ -1,8 +1,10 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
-#include <Domain/UIData.h>
+#include <ArchitectureCore/GeneratePointsController.h>
+#include <ArchitectureCore/GeneratePointsModel.h>
 #include <QSettings.h>
+#include <RenderWidget.h>
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent), ui(new Ui::MainWindow),
@@ -22,7 +24,17 @@ void MainWindow::Init() noexcept
 
 void MainWindow::InitConnect() noexcept
 {
+    auto pointGenerateModel = new Core::ArchitectureCore::GeneratePointsModel(this);
+    auto pointGenerateController =
+        new Core::ArchitectureCore::GeneratePointsController(generatePointsContext_.MakeShared(), pointGenerateModel, this);
+
     connect(ui->GeneratePointsButton, &QPushButton::clicked, this, &MainWindow::InvokeGenerate);
+    connect(pointGenerateController, &Core::Interfaces::IController::OnFinished, ui->RenderViewWidget,
+            &RenderWidget::UpdateView);
+
+
+    connect(this, &MainWindow::ControlGeneratePointsData, pointGenerateController,
+            &Core::Interfaces::IController::OnControl);
 }
 
 MainWindow::~MainWindow()
@@ -38,4 +50,7 @@ void MainWindow::InvokeGenerate()
     Core::Data::UIDataInput uiData{};
     uiData.generatePointsCount_ = ui->PointsGenerateCountSpinBox->value();
     uiData.pointsRadius_ = ui->PointRadiusSpinBox->value();
+    uiData.windowHeight_ = width();
+    uiData.windowWidth_ = height();
+    emit ControlGeneratePointsData(uiData);
 }
