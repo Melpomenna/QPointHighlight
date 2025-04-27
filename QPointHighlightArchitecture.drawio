@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Страница — 1" id="SVgKzfAzc47woYF4sVIR">
-    <mxGraphModel dx="2184" dy="1650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1285" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -132,32 +132,41 @@
         <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-65" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="760" y="20" width="510" height="370" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-52" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry y="50" width="510" height="320" as="geometry" />
-        </mxCell>
         <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-53" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;UI Example&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
           <mxGeometry x="190" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-54" value="Main Window" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry x="10" y="60" width="110" height="30" as="geometry" />
+        <mxCell id="fk3tUwRMxfBhT-qjf-Wo-42" value="" style="group" vertex="1" connectable="0" parent="uWFS6NgJ9AG8Ibt9EDaT-65">
+          <mxGeometry y="50" width="511" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-55" value="Render Widget:&lt;br&gt;Size - 800x800 default" style="rounded=1;whiteSpace=wrap;html=1;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry x="20" y="90" width="300" height="250" as="geometry" />
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-52" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry width="510" height="320" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-57" value="Button Generate" style="rounded=0;whiteSpace=wrap;html=1;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry x="331" y="110" width="169" height="30" as="geometry" />
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-54" value="Main Window" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry x="10" y="10" width="110" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-58" value="Points count:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry x="330" y="150" width="80" height="30" as="geometry" />
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-55" value="Render Widget:&lt;br&gt;Size - 800x800 default" style="rounded=1;whiteSpace=wrap;html=1;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry x="20" y="40" width="300" height="250" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-59" value="input" style="rounded=0;whiteSpace=wrap;html=1;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry x="410" y="150" width="90" height="20" as="geometry" />
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-57" value="Button Generate" style="rounded=0;whiteSpace=wrap;html=1;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry x="331" y="60" width="169" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-60" value="Total Points in circle: %d" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry x="330" y="180" width="180" height="30" as="geometry" />
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-58" value="Points count:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry x="330" y="95" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-61" value="List for each points in each circle:&lt;br&gt;Circle1.Label:Circle1.Points&lt;br&gt;....&lt;br&gt;CircleN.Label:CircleN.Label" style="rounded=0;whiteSpace=wrap;html=1;" parent="uWFS6NgJ9AG8Ibt9EDaT-65" vertex="1">
-          <mxGeometry x="331" y="210" width="169" height="100" as="geometry" />
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-59" value="input" style="rounded=0;whiteSpace=wrap;html=1;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry x="410" y="100" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-60" value="Total Points in circle: %d" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry x="331" y="160" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-61" value="List for each points in each circle:&lt;br&gt;Circle1.Label:Circle1.Points&lt;br&gt;....&lt;br&gt;CircleN.Label:CircleN.Label" style="rounded=0;whiteSpace=wrap;html=1;" parent="fk3tUwRMxfBhT-qjf-Wo-42" vertex="1">
+          <mxGeometry x="330" y="200" width="169" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fk3tUwRMxfBhT-qjf-Wo-40" value="Point radius:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="fk3tUwRMxfBhT-qjf-Wo-42">
+          <mxGeometry x="331" y="125" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fk3tUwRMxfBhT-qjf-Wo-41" value="input" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="fk3tUwRMxfBhT-qjf-Wo-42">
+          <mxGeometry x="410" y="130" width="90" height="20" as="geometry" />
         </mxCell>
         <mxCell id="uWFS6NgJ9AG8Ibt9EDaT-73" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="1360" y="295" width="400" height="235" as="geometry" />

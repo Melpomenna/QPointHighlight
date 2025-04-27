@@ -4,7 +4,7 @@ project(PointHighlight VERSION 1.0.0 LANGUAGES CXX)
 
 enable_testing(TRUE)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets OpenGLWidgets)
 
 qt_standard_project_setup()
 
@@ -12,7 +12,7 @@ set(SourceDir ${CMAKE_CURRENT_SOURCE_DIR}/Source)
 set(IncludeDir ${CMAKE_CURRENT_SOURCE_DIR}/Include)
 set(UIDir ${CMAKE_CURRENT_SOURCE_DIR}/UI)
 
-set(CMAKE_MODULE_PATH "${CMAKE_BINARY_DIR}:${CMAKE_MODULE_PATH}")
+set(CMAKE_MODULE_PATH "${CMAKE_BINARY_DIR}:${CMAKE_MODULE_PATH}:${IncludeDir}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build)
 set(CMAKE_AUTOUIC_SEARCH_PATHS "${CMAKE_AUTOUIC_SEARCH_PATHS};${UIDir}")
 
@@ -20,22 +20,31 @@ set(BENCHMARK_ENABLE_GTEST_TESTS  OFF CACHE BOOL "Whether to install benchmark")
 set(BENCHMARK_ENABLE_TESTING OFF CACHE BOOL "Disable tests")
 set(BENCHMARK_INSTALL_DOCS OFF CACHE BOOL "Disable docs")
 
+add_definitions(-DDEFAULT_POINTS_RADIUS=16)
+add_definitions(-DDEFAULT_POINTS_COUNT=50)
+
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/CMake)
+
 
 qt_add_executable(${PROJECT_NAME}
     WIN32 MACOSX_BUNDLE
     ${SourceDir}/main.cpp
-    ${SourceDir}/MainWindow.cpp
-    ${IncludeDir}/MainWindow.h
+    ${IncludeDir}/Domain/UIData.h
     ${UIDir}/MainWindow.ui
+    ${SourceDir}/MainWindow.cpp
+    ${SourceDir}/RenderWidget.cpp
+    ${IncludeDir}/MainWindow.h
+    ${IncludeDir}/RenderWidget.h
+    Resources/resource.qrc
 )
 
-include_directories(${IncludeDir})
+include_directories(${IncludeDir} ${UIDir})
 
-target_link_libraries(PointHighlight
+target_link_libraries(${PROJECT_NAME}
     PRIVATE
         Qt6::Core
         Qt6::Widgets
+        Qt6::OpenGLWidgets
 )
 
 include(GNUInstallDirs)
