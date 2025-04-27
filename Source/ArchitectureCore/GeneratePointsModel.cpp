@@ -35,7 +35,7 @@ namespace Core::ArchitectureCore
         {
             x = positionXDistribution(generator);
             y = positionYDistribution(generator);
-            circles_.emplace_back(x, y, uiData.pointsRadius_, colorDistribution(generator),
+            circles_.emplace_back(x, y,  colorDistribution(generator),
                                   colorDistribution(generator), colorDistribution(generator));
         }
 

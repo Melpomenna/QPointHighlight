@@ -38,13 +38,12 @@ namespace Core::Data
 
     struct alignas(4) Circle2D final
     {
-        Circle2D(float x, float y, int radius, int r = 0, int g = 0, int b = 0, int a = 255) :
-            point2d_(x, y), radius_(radius), color_(r, g, b, a)
+        Circle2D(float x, float y, int r = 0, int g = 0, int b = 0, int a = 255) :
+            point2d_(x, y), color_(r, g, b, a)
         {
         }
         ColorRGBA color_{0, 0, 0, 1};
         Point2D point2d_{0, 0};
-        int radius_{0};
     };
 
 } // namespace Core::Data

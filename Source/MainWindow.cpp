@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget* parent) :
 
 void MainWindow::Init() noexcept
 {
-    ui->PointRadiusSpinBox->setValue(settings_->value("points-radius", DEFAULT_POINTS_RADIUS).toInt());
+    ui->PointRadiusSpinBox->setValue(settings_->value("points-radius", DEFAULT_AREA_RADIUS).toInt());
     ui->PointsGenerateCountSpinBox->setValue(settings_->value("points-count", DEFAULT_POINTS_COUNT).toInt());
 }
 
@@ -50,7 +50,7 @@ void MainWindow::InvokeGenerate()
     Core::Data::UIDataInput uiData{};
     uiData.generatePointsCount_ = ui->PointsGenerateCountSpinBox->value();
     uiData.pointsRadius_ = ui->PointRadiusSpinBox->value();
-    uiData.windowHeight_ = width();
-    uiData.windowWidth_ = height();
+    uiData.windowHeight_ = ui->RenderViewWidget->width() - DEFAULT_POINTS_RADIUS;
+    uiData.windowWidth_ = ui->RenderViewWidget->height() - DEFAULT_POINTS_RADIUS;
     emit ControlGeneratePointsData(uiData);
 }

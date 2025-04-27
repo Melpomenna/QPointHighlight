@@ -27,7 +27,7 @@ namespace Core::Render
             painter.setBrush(brush);
             center.setX(butch_[i].point2d_.x_);
             center.setY(butch_[i].point2d_.y_);
-            painter.drawEllipse(center, butch_[i].radius_, butch_[i].radius_);
+            painter.drawEllipse(center, DEFAULT_AREA_RADIUS, DEFAULT_AREA_RADIUS);
         }
     }
 
