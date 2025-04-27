@@ -4,8 +4,12 @@ add_library(${target}
 			STATIC 
 			GeneratePointsController.cpp
 			GeneratePointsModel.cpp
+			GenerateAreaController.cpp
+			GenerateAreaModel.cpp
 			${IncludeDir}/ArchitectureCore/GeneratePointsController.h
 			${IncludeDir}/ArchitectureCore/GeneratePointsModel.h
+			${IncludeDir}/ArchitectureCore/GenerateAreaController.h
+			${IncludeDir}/ArchitectureCore/GenerateAreaModel.h
 			${IncludeDir}/Interfaces/IController.h
 			${IncludeDir}/Interfaces/IModel.h
 			${IncludeDir}/Interfaces/IRenderable.h

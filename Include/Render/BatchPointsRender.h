@@ -2,10 +2,10 @@
 
 #include <Domain/UIData.h>
 #include <Interfaces/IRenderable.h>
-#include <vector>
+#include <QColor>
 #include <QList>
 #include <QRect>
-#include <QColor>
+#include <vector>
 
 namespace Core::Render
 {
