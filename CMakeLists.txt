@@ -4,7 +4,8 @@ project(PointHighlight VERSION 1.0.0 LANGUAGES CXX)
 
 enable_testing(TRUE)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets OpenGLWidgets)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Gui)
+find_package(CUDA)
 
 qt_standard_project_setup()
 
@@ -29,7 +30,6 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/CMake)
 qt_add_executable(${PROJECT_NAME}
     WIN32 MACOSX_BUNDLE
     ${SourceDir}/main.cpp
-    ${IncludeDir}/Domain/UIData.h
     ${UIDir}/MainWindow.ui
     ${SourceDir}/MainWindow.cpp
     ${SourceDir}/RenderWidget.cpp
@@ -40,11 +40,18 @@ qt_add_executable(${PROJECT_NAME}
 
 include_directories(${IncludeDir} ${UIDir})
 
+if (CUDA_FOUND)
+    include_directories(${CUDA_INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME} PRIVATE ${CUDA_LIBRARIES})
+endif()
+
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
         Qt6::Core
         Qt6::Widgets
-        Qt6::OpenGLWidgets
+        ArchitectureCore
+        Async
+        RenderHelpers
 )
 
 include(GNUInstallDirs)
@@ -70,3 +77,6 @@ install(SCRIPT ${deploy_script})
 add_subdirectory(ThirdParty)
 add_subdirectory(Tests)
 add_subdirectory(Benchmarks)
+add_subdirectory(${SourceDir}/ArchitectureCore)
+add_subdirectory(${SourceDir}/Async)
+add_subdirectory(${SourceDir}/Render)
