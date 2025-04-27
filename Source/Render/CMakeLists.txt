@@ -3,8 +3,12 @@ set(target RenderHelpers)
 add_library(${target} 
 			STATIC 
 			BatchPointsRender.cpp
+			AreaBatchRender.cpp
+			CircleAreaBatchRender.cpp
 			${IncludeDir}/Interfaces/IRenderable.h
 			${IncludeDir}/Render/BatchPointsRender.h
+			${IncludeDir}/Render/AreaBatchRender.h
+			${IncludeDir}/Render/CircleAreaBatchRender.h
 			${IncludeDir}/Domain/UIData.h
 )
 

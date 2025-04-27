@@ -35,8 +35,8 @@ namespace Core::ArchitectureCore
         {
             x = positionXDistribution(generator);
             y = positionYDistribution(generator);
-            circles_.emplace_back(x, y,  colorDistribution(generator),
-                                  colorDistribution(generator), colorDistribution(generator));
+            circles_.emplace_back(x, y, colorDistribution(generator), colorDistribution(generator),
+                                  colorDistribution(generator));
         }
 
         if (context->IsRunning())
@@ -46,4 +46,10 @@ namespace Core::ArchitectureCore
             emit OnFinished(renderObject);
         }
     }
+
+    _NODISCARD const std::pmr::vector<Data::Circle2D> GeneratePointsModel::GetData() const& noexcept
+    {
+        return circles_;
+    }
+
 } // namespace Core::ArchitectureCore

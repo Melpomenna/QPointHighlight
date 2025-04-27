@@ -39,6 +39,7 @@ namespace Core::ArchitectureCore
 
     void GeneratePointsController::OnModelFinished(std::shared_ptr<Interfaces::IRenderable> renderObject)
     {
+        context_->SetState(Core::Async::State::Inited);
         emit OnFinished(renderObject);
     }
 

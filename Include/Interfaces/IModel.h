@@ -30,4 +30,26 @@ namespace Core::Interfaces
     signals:
         void OnFinished(std::shared_ptr<Core::Interfaces::IRenderable>);
     };
+
+    class IAreaModel : public QObject
+    {
+        Q_OBJECT;
+
+    public:
+        explicit IAreaModel(QObject* parent = nullptr) : QObject(parent)
+        {
+        }
+
+        virtual void Invoke(Core::Data::UIDataInput) = 0;
+
+    public slots:
+        virtual void StartGenerateArea(Core::Data::Point2D) = 0;
+        virtual void ProcessedGenerateArea(Core::Data::Point2D) = 0;
+        virtual void FinishGenerateArea(Core::Data::Point2D, Core::Data::UIDataInput) = 0;
+
+    signals:
+        void OnCreatePart(std::shared_ptr<Core::Interfaces::IRenderable>);
+        void OnFinished(std::shared_ptr<Core::Interfaces::IRenderable>);
+        void OnFinishedRecalcAreaCount(std::pmr::vector<Core::Data::CapturedAreas>);
+    };
 } // namespace Core::Interfaces
